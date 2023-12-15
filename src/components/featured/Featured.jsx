@@ -1,7 +1,13 @@
 import { InfoOutlined, PlayArrow } from "@mui/icons-material";
 import "./featured.scss";
+import { useNavigate } from "react-router-dom";
 
 export default function Featured({ type }) {
+  const navigate = useNavigate();
+
+  const handlePlay = () => {
+    navigate("/Watch");
+  };
   return (
     <div className="featured">
       {type && (
@@ -41,7 +47,7 @@ export default function Featured({ type }) {
           mollitia praesentium?
         </span>
         <div className="buttons">
-          <button className="play">
+          <button className="play" onClick={handlePlay}>
             <PlayArrow />
             <span>Play</span>
           </button>

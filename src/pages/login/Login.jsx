@@ -1,6 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import "./login.scss";
 
 export default function Login() {
+  const navigate = useNavigate();
+
+  const handleRegister = () => {
+    navigate("/Register");
+  };
   return (
     <div className="login">
       <div className="top">
@@ -19,7 +25,7 @@ export default function Login() {
           <input type="password" placeholder="Password" />
           <button className="loginButton">Sign In</button>
           <span>
-            New to Netflix ? <b>Sign up now.</b>
+            New to Netflix ? <b onClick={handleRegister}>Sign up now.</b>
           </span>
           <small>
             This page is protected by Google reCAPTCHA to ensure you're not a
